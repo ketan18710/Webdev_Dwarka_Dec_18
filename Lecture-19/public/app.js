@@ -22,14 +22,16 @@ socket.on('join', function(data){
 
 socket.on('joined', function(data){
   let line = `${data.name} has JOINED`;
-  let pi =  document.createElement('p');
-  let text = document.createTextNode(line);
-  pi.appendChild(text);
-  result.appendChild(pi);
+ // let pi =  document.createElement('p');
+  //let text = document.createTextNode(line);
+  //pi.appendChild(text);
+  //result.appendChild(pi);
+console.log(line);
 
 })
 socket.on('everybody', function(data){
-   createNodes(data);
+   console.log(data.name + ":    " + data.key)
+inp.value = ''
 })
 
 function createNodes(data){
@@ -46,5 +48,5 @@ function createNodes(data){
     p.appendChild(namBox);
     p.appendChild(msgBox);
 
-    result.appendChild(p);
+    //result.appendChild(p);
 }
